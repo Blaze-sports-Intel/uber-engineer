@@ -11,9 +11,19 @@
   "plugins": [
     {
       "name": "uber-engineer",
-      "path": "plugins/uber-engineer",
+      "description": "Production-grade engineering plugin for Claude Code, Cowork, and Codex. 17 discipline skills (frontend, backend, full-stack, mobile, game, devops, API, db, embedded, cloud, AI/ML, blockchain, QA, security, AR/VR, data science, web), 4 agents, 8 hooks, 17 slash commands, and MCP wiring for Supabase, GitHub, Cloudflare, Stripe, PostHog, Context7, Playwright, and Chrome DevTools.",
+      "category": "engineering",
       "version": "1.0.0",
-      "description": "Production-grade engineering plugin for Claude Code, Cowork, and Codex. 17 discipline skills (frontend, backend, full-stack, mobile, game, devops, API, db, embedded, cloud, AI/ML, blockchain, QA, security, AR/VR, data science, web), 4 agents, 8 hooks, 17 slash commands, and MCP wiring for Supabase, GitHub, Cloudflare, Stripe, PostHog, Context7, Playwright, and Chrome DevTools."
+      "author": {
+        "name": "Austin Humphrey",
+        "email": "humphrey.austin20@gmail.com"
+      },
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/Blaze-sports-Intel/uber-engineer.git",
+        "path": "plugins/uber-engineer"
+      },
+      "homepage": "https://github.com/Blaze-sports-Intel/uber-engineer"
     }
   ]
 }
