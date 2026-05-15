@@ -11,9 +11,9 @@
   "plugins": [
     {
       "name": "uber-engineer",
+      "version": "1.0.1",
       "description": "Production-grade cross-platform engineering plugin for Claude Code, Cowork, and Codex. 17 discipline skills (frontend, backend, full-stack, mobile, game, devops, API, database, embedded, cloud, AI/ML, blockchain, QA, security, AR/VR, data science, web). 4 cross-cutting agents (discipline-router, build-validator, code-reviewer, ship-auditor). 18 slash commands (one per discipline plus a /uber router). 21 lifecycle hooks (PostToolUse skill validators, PreToolUse destructive-action guards, Stop ship-auditor reminder). MCP wiring for 9 platforms: Supabase, GitHub, Cloudflare, Stripe, PostHog, Context7, Playwright, Chrome DevTools, Firecrawl.",
       "category": "engineering",
-      "version": "1.0.0",
       "author": {
         "name": "Austin Humphrey",
         "email": "humphrey.austin20@gmail.com"
