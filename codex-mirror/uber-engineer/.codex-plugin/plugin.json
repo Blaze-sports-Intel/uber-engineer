@@ -1,0 +1,31 @@
+{
+  "$schema": "https://developers.openai.com/codex/schemas/plugin-v1.json",
+  "name": "uber-engineer",
+  "version": "1.0.0",
+  "description": "Production-grade engineering plugin for Claude Code, Cowork, and Codex. 17 discipline skills (frontend, backend, full-stack, mobile, game, devops, API, db, embedded, cloud, AI/ML, blockchain, QA, security, AR/VR, data science, web), 4 agents, 8 hooks, 17 slash commands, and MCP wiring for Supabase, GitHub, Cloudflare, Stripe, PostHog, Context7, Playwright, and Chrome DevTools.",
+  "author": "Austin Humphrey (humphrey.austin20@gmail.com)",
+  "license": "MIT",
+  "components": {
+    "skills": [
+      "skills/frontend-development",
+      "skills/backend-development",
+      "skills/full-stack-development",
+      "skills/mobile-development",
+      "skills/game-development",
+      "skills/devops-and-infrastructure",
+      "skills/api-development",
+      "skills/database-development",
+      "skills/embedded-systems-development",
+      "skills/cloud-development",
+      "skills/ai-ml-development",
+      "skills/blockchain-development",
+      "skills/test-and-quality-assurance",
+      "skills/security-development",
+      "skills/ar-vr-development",
+      "skills/data-science-development",
+      "skills/web-development"
+    ],
+    "hooks": "hooks/hooks.json",
+    "mcp": ".mcp.json"
+  }
+}

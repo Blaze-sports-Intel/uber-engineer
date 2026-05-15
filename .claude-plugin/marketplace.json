@@ -1,0 +1,19 @@
+{
+  "$schema": "https://code.claude.com/schemas/marketplace-v1.json",
+  "name": "uber-engineer-marketplace",
+  "version": "1.0.0",
+  "description": "Public marketplace for the uber-engineer plugin and future discipline packs.",
+  "owner": {
+    "name": "Austin Humphrey",
+    "email": "humphrey.austin20@gmail.com",
+    "url": "https://github.com/Blaze-sports-Intel"
+  },
+  "plugins": [
+    {
+      "name": "uber-engineer",
+      "path": "plugins/uber-engineer",
+      "version": "1.0.0",
+      "description": "Production-grade engineering plugin for Claude Code, Cowork, and Codex. 17 discipline skills (frontend, backend, full-stack, mobile, game, devops, API, db, embedded, cloud, AI/ML, blockchain, QA, security, AR/VR, data science, web), 4 agents, 8 hooks, 17 slash commands, and MCP wiring for Supabase, GitHub, Cloudflare, Stripe, PostHog, Context7, Playwright, and Chrome DevTools."
+    }
+  ]
+}
