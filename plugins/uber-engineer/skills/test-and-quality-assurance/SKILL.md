@@ -1,6 +1,6 @@
 ---
 name: test-and-quality-assurance
-description: Test strategy, contract tests, E2E, visual regression, performance, and accessibility verification. Use when the user mentions: tests, testing, QA, test strategy, test pyramid, Vitest, Jest, Pytest, JUnit, RSpec, Go test, Playwright, Cypress, WebDriverIO, Detox, Appium, contract test, Pact, visual regression, Percy, Chromatic, Lighthouse CI. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: writing application code that has tests as a side effect (the discipline owns testing decisions); build/CI orchestration without test logic (use devops-and-infrastructure).
+description: "Test strategy, contract tests, E2E, visual regression, performance, and accessibility verification. Use when the user mentions: tests, testing, QA, test strategy, test pyramid, Vitest, Jest, Pytest, JUnit, RSpec, Go test, Playwright, Cypress, WebDriverIO, Detox, Appium, contract test, Pact, visual regression, Percy, Chromatic, Lighthouse CI. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: writing application code that has tests as a side effect (the discipline owns testing decisions); build/CI orchestration without test logic (use devops-and-infrastructure)."
 ---
 
 # Test & Quality Assurance

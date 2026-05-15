@@ -1,6 +1,6 @@
 ---
 name: cloud-development
-description: Serverless, multi-environment config, observability, and release promotion across major clouds. Use when the user mentions: AWS, Lambda, S3, DynamoDB, EventBridge, GCP, Cloud Run, Firebase, Azure Functions, Cloudflare Workers, D1, KV, R2, Durable Objects, Vercel, Netlify, Fly.io, Render, serverless, edge runtime, cold start. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: on-prem infrastructure work; container orchestration on a private cluster (use devops-and-infrastructure).
+description: "Serverless, multi-environment config, observability, and release promotion across major clouds. Use when the user mentions: AWS, Lambda, S3, DynamoDB, EventBridge, GCP, Cloud Run, Firebase, Azure Functions, Cloudflare Workers, D1, KV, R2, Durable Objects, Vercel, Netlify, Fly.io, Render, serverless, edge runtime, cold start. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: on-prem infrastructure work; container orchestration on a private cluster (use devops-and-infrastructure)."
 ---
 
 # Cloud Development

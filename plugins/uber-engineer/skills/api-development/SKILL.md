@@ -1,6 +1,6 @@
 ---
 name: api-development
-description: API contracts, versioning, backward compatibility, error schemas, and developer experience. Use when the user mentions: API design, REST, GraphQL, gRPC, OpenAPI, Swagger, API versioning, deprecation, error schema, RFC 7807, problem details, webhook, pagination, rate limit, API key, OAuth scopes, SDK, API gateway. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: internal-only service-to-service calls without external contract; frontend data fetching strategy without server contract change.
+description: "API contracts, versioning, backward compatibility, error schemas, and developer experience. Use when the user mentions: API design, REST, GraphQL, gRPC, OpenAPI, Swagger, API versioning, deprecation, error schema, RFC 7807, problem details, webhook, pagination, rate limit, API key, OAuth scopes, SDK, API gateway. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: internal-only service-to-service calls without external contract; frontend data fetching strategy without server contract change."
 ---
 
 # API Development

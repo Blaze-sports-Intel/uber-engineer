@@ -1,6 +1,6 @@
 ---
 name: backend-development
-description: Service architecture, API contracts, auth, data persistence, and operational hygiene. Use when the user mentions: backend, API, REST, GraphQL, server, Node.js, Python, Go, Java, Spring Boot, Express, Fastify, FastAPI, Django, Rails, authentication, authorization, JWT, OAuth, rate limiting, idempotency, caching, queue, background job. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: pure frontend UI work (use frontend-development); database schema migration work (use database-development); container orchestration / deploy pipeline (use devops-and-infrastructure).
+description: "Service architecture, API contracts, auth, data persistence, and operational hygiene. Use when the user mentions: backend, API, REST, GraphQL, server, Node.js, Python, Go, Java, Spring Boot, Express, Fastify, FastAPI, Django, Rails, authentication, authorization, JWT, OAuth, rate limiting, idempotency, caching, queue, background job. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: pure frontend UI work (use frontend-development); database schema migration work (use database-development); container orchestration / deploy pipeline (use devops-and-infrastructure)."
 ---
 
 # Backend Development

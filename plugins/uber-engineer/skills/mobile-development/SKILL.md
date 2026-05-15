@@ -1,6 +1,6 @@
 ---
 name: mobile-development
-description: Native iOS, native Android, and cross-platform mobile with build, test, store, and offline constraints. Use when the user mentions: iOS, Swift, SwiftUI, Xcode, Android, Kotlin, Jetpack Compose, React Native, Expo, Flutter, Dart, TestFlight, App Store, Play Store, mobile app, Liquid Glass, deep link, push notification, offline-first. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: web-only responsive work (use frontend-development); backend-only API design.
+description: "Native iOS, native Android, and cross-platform mobile with build, test, store, and offline constraints. Use when the user mentions: iOS, Swift, SwiftUI, Xcode, Android, Kotlin, Jetpack Compose, React Native, Expo, Flutter, Dart, TestFlight, App Store, Play Store, mobile app, Liquid Glass, deep link, push notification, offline-first. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: web-only responsive work (use frontend-development); backend-only API design."
 ---
 
 # Mobile Development

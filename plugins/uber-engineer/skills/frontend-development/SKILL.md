@@ -1,6 +1,6 @@
 ---
 name: frontend-development
-description: UI implementation, design systems, accessibility, responsive layout, and frontend performance. Use when the user mentions: frontend, UI, user interface, React, Next.js, Vue, Svelte, Angular, component, design system, accessibility, WCAG, ARIA, responsive, Core Web Vitals, LCP, INP, CLS, Storybook, Tailwind, shadcn/ui, hydration, bundle size. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: backend API design without a UI surface; pure database schema work; infrastructure or deploy automation; iOS/Android native UI (use mobile-development).
+description: "UI implementation, design systems, accessibility, responsive layout, and frontend performance. Use when the user mentions: frontend, UI, user interface, React, Next.js, Vue, Svelte, Angular, component, design system, accessibility, WCAG, ARIA, responsive, Core Web Vitals, LCP, INP, CLS, Storybook, Tailwind, shadcn/ui, hydration, bundle size. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: backend API design without a UI surface; pure database schema work; infrastructure or deploy automation; iOS/Android native UI (use mobile-development)."
 ---
 
 # Frontend Development

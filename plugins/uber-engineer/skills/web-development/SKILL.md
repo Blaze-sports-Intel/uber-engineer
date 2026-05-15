@@ -1,6 +1,6 @@
 ---
 name: web-development
-description: End-to-end web app delivery: routing, rendering modes, SEO, perf, deploy, and observability. Use when the user mentions: web app, website, SSR, SSG, ISR, RSC, SPA, Next.js, Remix, Astro, SvelteKit, Nuxt, SEO, structured data, sitemap, robots.txt, OpenGraph, Lighthouse, Vercel, Cloudflare Pages. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: isolated frontend component work (use frontend-development); isolated backend service work (use backend-development).
+description: "End-to-end web app delivery: routing, rendering modes, SEO, perf, deploy, and observability. Use when the user mentions: web app, website, SSR, SSG, ISR, RSC, SPA, Next.js, Remix, Astro, SvelteKit, Nuxt, SEO, structured data, sitemap, robots.txt, OpenGraph, Lighthouse, Vercel, Cloudflare Pages. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: isolated frontend component work (use frontend-development); isolated backend service work (use backend-development)."
 ---
 
 # Web Development

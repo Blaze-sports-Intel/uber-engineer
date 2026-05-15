@@ -1,6 +1,6 @@
 ---
 name: ar-vr-development
-description: Spatial UX, perf budgets, motion comfort, anchors, hand/eye input, and platform-specific deploy. Use when the user mentions: AR, VR, XR, spatial, Vision Pro, visionOS, Quest, Meta Horizon, ARKit, ARCore, WebXR, OpenXR, Unity XR, Unreal XR, RealityKit, RealityComposer, hand tracking, eye tracking, passthrough, motion sickness. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: flat 2D UI work (use frontend-development); mobile non-XR apps (use mobile-development).
+description: "Spatial UX, perf budgets, motion comfort, anchors, hand/eye input, and platform-specific deploy. Use when the user mentions: AR, VR, XR, spatial, Vision Pro, visionOS, Quest, Meta Horizon, ARKit, ARCore, WebXR, OpenXR, Unity XR, Unreal XR, RealityKit, RealityComposer, hand tracking, eye tracking, passthrough, motion sickness. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: flat 2D UI work (use frontend-development); mobile non-XR apps (use mobile-development)."
 ---
 
 # AR/VR Development

@@ -1,6 +1,6 @@
 ---
 name: embedded-systems-development
-description: C/C++/Rust on microcontrollers, RTOS, memory limits, hardware abstraction, and cross-compiling. Use when the user mentions: embedded, microcontroller, MCU, Arduino, ESP32, STM32, Raspberry Pi Pico, RP2040, RTOS, FreeRTOS, Zephyr, bare metal, firmware, HAL, DMA, interrupt, ISR, cross-compile, linker script, no_std. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: Linux server work (use backend-development or devops); general C/C++ programming on desktop.
+description: "C/C++/Rust on microcontrollers, RTOS, memory limits, hardware abstraction, and cross-compiling. Use when the user mentions: embedded, microcontroller, MCU, Arduino, ESP32, STM32, Raspberry Pi Pico, RP2040, RTOS, FreeRTOS, Zephyr, bare metal, firmware, HAL, DMA, interrupt, ISR, cross-compile, linker script, no_std. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: Linux server work (use backend-development or devops); general C/C++ programming on desktop."
 ---
 
 # Embedded Systems Development

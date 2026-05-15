@@ -1,6 +1,6 @@
 ---
 name: ai-ml-development
-description: Experiment workflows, datasets, evals, model packaging, serving, and rollback for AI/ML systems. Use when the user mentions: ML, machine learning, AI, model training, fine-tuning, PyTorch, TensorFlow, JAX, scikit-learn, Hugging Face, LangChain, LlamaIndex, evals, RAG, vector database, embeddings, MLflow, Weights & Biases, prompt engineering, Anthropic API, OpenAI API. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: data analysis without model training (use data-science-development); ML infra rollout work without model changes (use devops-and-infrastructure).
+description: "Experiment workflows, datasets, evals, model packaging, serving, and rollback for AI/ML systems. Use when the user mentions: ML, machine learning, AI, model training, fine-tuning, PyTorch, TensorFlow, JAX, scikit-learn, Hugging Face, LangChain, LlamaIndex, evals, RAG, vector database, embeddings, MLflow, Weights & Biases, prompt engineering, Anthropic API, OpenAI API. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: data analysis without model training (use data-science-development); ML infra rollout work without model changes (use devops-and-infrastructure)."
 ---
 
 # AI/ML Development

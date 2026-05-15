@@ -1,6 +1,6 @@
 ---
 name: game-development
-description: Engine architecture, gameplay systems, performance budgets, and asset pipelines. Use when the user mentions: game, Unity, Unreal, Godot, Phaser, Three.js, React Three Fiber, Bevy, ECS, frame budget, draw call, asset pipeline, shader, physics, input system, save system, sprite, GLTF, GLB. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: pure data-viz that isn't a game (use frontend-development or data-science-development); video editing pipelines without runtime simulation.
+description: "Engine architecture, gameplay systems, performance budgets, and asset pipelines. Use when the user mentions: game, Unity, Unreal, Godot, Phaser, Three.js, React Three Fiber, Bevy, ECS, frame budget, draw call, asset pipeline, shader, physics, input system, save system, sprite, GLTF, GLB. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: pure data-viz that isn't a game (use frontend-development or data-science-development); video editing pipelines without runtime simulation."
 ---
 
 # Game Development

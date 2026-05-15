@@ -1,6 +1,6 @@
 ---
 name: full-stack-development
-description: End-to-end feature delivery across frontend, backend, API, database, and deploy. Use when the user mentions: full-stack, fullstack, end-to-end feature, ship a feature, Next.js full-stack, Remix, SvelteKit, Nuxt, tRPC, T3 stack, Astro, Hono, monorepo, Turborepo, Nx. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: single-layer work that belongs in one discipline; pure infra/deploy without app code.
+description: "End-to-end feature delivery across frontend, backend, API, database, and deploy. Use when the user mentions: full-stack, fullstack, end-to-end feature, ship a feature, Next.js full-stack, Remix, SvelteKit, Nuxt, tRPC, T3 stack, Astro, Hono, monorepo, Turborepo, Nx. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: single-layer work that belongs in one discipline; pure infra/deploy without app code."
 ---
 
 # Full-Stack Development

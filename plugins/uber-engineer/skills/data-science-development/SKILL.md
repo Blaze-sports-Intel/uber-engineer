@@ -1,6 +1,6 @@
 ---
 name: data-science-development
-description: Reproducible analysis, dataset hygiene, statistical rigor, dashboarding, and shipping insights. Use when the user mentions: data analysis, data science, notebook, Jupyter, pandas, Polars, DuckDB, Spark, dbt, Airflow, Dagster, Prefect, Streamlit, Plotly, Tableau, Looker, hypothesis test, A/B test, cohort analysis. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: model training (use ai-ml-development); production data pipeline ops (use devops-and-infrastructure or backend-development).
+description: "Reproducible analysis, dataset hygiene, statistical rigor, dashboarding, and shipping insights. Use when the user mentions: data analysis, data science, notebook, Jupyter, pandas, Polars, DuckDB, Spark, dbt, Airflow, Dagster, Prefect, Streamlit, Plotly, Tableau, Looker, hypothesis test, A/B test, cohort analysis. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: model training (use ai-ml-development); production data pipeline ops (use devops-and-infrastructure or backend-development)."
 ---
 
 # Data Science Development

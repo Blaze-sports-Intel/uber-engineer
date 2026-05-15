@@ -1,254 +1,242 @@
 {
   "$schema": "https://code.claude.com/schemas/hooks-v1.json",
-  "version": 1,
+  "description": "uber-engineer plugin hooks: skill validators (PostToolUse), destructive-action guards (PreToolUse), and ship-auditor reminder (Stop).",
   "hooks": {
     "PostToolUse": [
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/frontend-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/frontend-development/scripts/validate_skill.py",
-        "description": "Validate frontend-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/frontend-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate frontend-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/backend-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/backend-development/scripts/validate_skill.py",
-        "description": "Validate backend-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/backend-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate backend-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/full-stack-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/full-stack-development/scripts/validate_skill.py",
-        "description": "Validate full-stack-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/full-stack-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate full-stack-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/mobile-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/mobile-development/scripts/validate_skill.py",
-        "description": "Validate mobile-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/mobile-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate mobile-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/game-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/game-development/scripts/validate_skill.py",
-        "description": "Validate game-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/game-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate game-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/devops-and-infrastructure/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/devops-and-infrastructure/scripts/validate_skill.py",
-        "description": "Validate devops-and-infrastructure skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/devops-and-infrastructure/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate devops-and-infrastructure skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/api-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/api-development/scripts/validate_skill.py",
-        "description": "Validate api-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/api-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate api-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/database-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/database-development/scripts/validate_skill.py",
-        "description": "Validate database-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/database-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate database-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/embedded-systems-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/embedded-systems-development/scripts/validate_skill.py",
-        "description": "Validate embedded-systems-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/embedded-systems-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate embedded-systems-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/cloud-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/cloud-development/scripts/validate_skill.py",
-        "description": "Validate cloud-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/cloud-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate cloud-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/ai-ml-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/ai-ml-development/scripts/validate_skill.py",
-        "description": "Validate ai-ml-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/ai-ml-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate ai-ml-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/blockchain-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/blockchain-development/scripts/validate_skill.py",
-        "description": "Validate blockchain-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/blockchain-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate blockchain-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/test-and-quality-assurance/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/test-and-quality-assurance/scripts/validate_skill.py",
-        "description": "Validate test-and-quality-assurance skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/test-and-quality-assurance/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate test-and-quality-assurance skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/security-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/security-development/scripts/validate_skill.py",
-        "description": "Validate security-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/security-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate security-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/ar-vr-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/ar-vr-development/scripts/validate_skill.py",
-        "description": "Validate ar-vr-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/ar-vr-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate ar-vr-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/data-science-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/data-science-development/scripts/validate_skill.py",
-        "description": "Validate data-science-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/data-science-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate data-science-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ],
-          "file_pattern": "skills/web-development/**"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/web-development/scripts/validate_skill.py",
-        "description": "Validate web-development skill scaffold after edits.",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/skills/web-development/scripts/validate_skill.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Validate web-development skill scaffold after edits."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Write",
-            "Edit"
-          ]
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/scripts/check_definition_of_done.py",
-        "description": "After any write, remind about the four-state rule (loading/error/empty/populated).",
-        "continue_on_failure": true
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/scripts/check_definition_of_done.py",
+            "timeout": 60
+          }
+        ],
+        "description": "After any write, remind about the four-state rule (loading/error/empty/populated)."
       }
     ],
     "PreToolUse": [
       {
-        "matcher": {
-          "tool_name": [
-            "Bash"
-          ],
-          "command_pattern": "rm -rf|DROP TABLE|DROP DATABASE|TRUNCATE"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/scripts/destructive_action_guard.py",
-        "description": "Block destructive actions without explicit user confirmation.",
-        "continue_on_failure": false
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/scripts/destructive_action_guard.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Block destructive actions without explicit user confirmation."
       },
       {
-        "matcher": {
-          "tool_name": [
-            "Bash"
-          ],
-          "command_pattern": "git push --force|git push -f"
-        },
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/scripts/destructive_action_guard.py",
-        "description": "Block force-push without explicit user confirmation.",
-        "continue_on_failure": false
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/scripts/destructive_action_guard.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Block force-push without explicit user confirmation."
       }
     ],
     "Stop": [
       {
-        "matcher": {},
-        "command": "python3 ${CLAUDE_PLUGIN_ROOT}/scripts/ship_auditor_reminder.py",
-        "description": "Remind that 200 OK is not the same as visible correct output.",
-        "continue_on_failure": true
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/scripts/ship_auditor_reminder.py",
+            "timeout": 60
+          }
+        ],
+        "description": "Remind that 200 OK is not the same as visible correct output."
       }
     ]
   }

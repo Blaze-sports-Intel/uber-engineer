@@ -1,6 +1,6 @@
 ---
 name: security-development
-description: Threat modeling, secure-by-default code, dependency hygiene, secrets management, and incident response. Use when the user mentions: security, threat model, STRIDE, OWASP, CVE, SAST, DAST, dependency audit, supply chain, SBOM, Snyk, Dependabot, secrets scanning, SOC 2, ISO 27001, GDPR, PII, encryption, TLS, key management, incident response. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: vendor compliance paperwork without code or config implications; physical security.
+description: "Threat modeling, secure-by-default code, dependency hygiene, secrets management, and incident response. Use when the user mentions: security, threat model, STRIDE, OWASP, CVE, SAST, DAST, dependency audit, supply chain, SBOM, Snyk, Dependabot, secrets scanning, SOC 2, ISO 27001, GDPR, PII, encryption, TLS, key management, incident response. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: vendor compliance paperwork without code or config implications; physical security."
 ---
 
 # Security Development

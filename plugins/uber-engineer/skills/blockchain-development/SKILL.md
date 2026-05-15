@@ -1,6 +1,6 @@
 ---
 name: blockchain-development
-description: Smart contracts, wallet UX, indexers, security review, and on-chain integration. Use when the user mentions: blockchain, Ethereum, Solidity, Foundry, Hardhat, Rust smart contracts, Solana, Anchor, wallet, ERC-20, ERC-721, NFT, DeFi, EVM, subgraph, indexer, RPC, MEV, wagmi, viem, ethers.js. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: general web3 frontend without contract code (use frontend-development); trading bots without on-chain integration.
+description: "Smart contracts, wallet UX, indexers, security review, and on-chain integration. Use when the user mentions: blockchain, Ethereum, Solidity, Foundry, Hardhat, Rust smart contracts, Solana, Anchor, wallet, ERC-20, ERC-721, NFT, DeFi, EVM, subgraph, indexer, RPC, MEV, wagmi, viem, ethers.js. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: general web3 frontend without contract code (use frontend-development); trading bots without on-chain integration."
 ---
 
 # Blockchain Development

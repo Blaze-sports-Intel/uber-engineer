@@ -1,6 +1,6 @@
 ---
 name: devops-and-infrastructure
-description: CI/CD, infrastructure as code, observability, rollback, and incident hygiene. Use when the user mentions: DevOps, CI/CD, GitHub Actions, GitLab CI, Jenkins, Terraform, Pulumi, Ansible, Kubernetes, K8s, Helm, Docker, container, deploy, rollback, blue-green, canary, observability, Prometheus, Grafana, OpenTelemetry, incident, runbook. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: application code changes without deploy implications (use the relevant dev discipline); vendor billing/admin work.
+description: "CI/CD, infrastructure as code, observability, rollback, and incident hygiene. Use when the user mentions: DevOps, CI/CD, GitHub Actions, GitLab CI, Jenkins, Terraform, Pulumi, Ansible, Kubernetes, K8s, Helm, Docker, container, deploy, rollback, blue-green, canary, observability, Prometheus, Grafana, OpenTelemetry, incident, runbook. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: application code changes without deploy implications (use the relevant dev discipline); vendor billing/admin work."
 ---
 
 # DevOps & Infrastructure

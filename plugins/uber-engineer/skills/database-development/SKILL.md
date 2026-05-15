@@ -1,6 +1,6 @@
 ---
 name: database-development
-description: Schema design, migration safety, indexing, query review, and read-only-by-default access. Use when the user mentions: database, schema, migration, Postgres, MySQL, SQLite, MongoDB, Redis, Supabase, CockroachDB, PlanetScale, DynamoDB, index, query plan, EXPLAIN, RLS, row-level security, RBAC, partition, sharding. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: application-layer caching strategy without persistence change (use backend-development); data analysis / visualization (use data-science-development).
+description: "Schema design, migration safety, indexing, query review, and read-only-by-default access. Use when the user mentions: database, schema, migration, Postgres, MySQL, SQLite, MongoDB, Redis, Supabase, CockroachDB, PlanetScale, DynamoDB, index, query plan, EXPLAIN, RLS, row-level security, RBAC, partition, sharding. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: application-layer caching strategy without persistence change (use backend-development); data analysis / visualization (use data-science-development)."
 ---
 
 # Database Development
