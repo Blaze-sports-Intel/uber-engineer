@@ -1,32 +1,33 @@
 # AR/VR Development — Examples
 
-Concrete invocations and before/after patterns.
+Concrete invocations and a before/after pattern.
 
 ## Slash command invocations
 
 ```
-/uber:xr frame-budget --hz=90
+/xr frame-budget --hz=90
 ```
 
 ```
-/uber:xr spatial-ux scene-anchors
+/xr spatial-ux scene-anchors
 ```
 
 ```
-/uber:xr comfort-settings
+/xr comfort-settings
 ```
 
+The `/uber` router will dispatch to `/xr` after reading the request. You can
+also call the discipline command directly when you already know the discipline.
 
 ## Before / after pattern
 
-**Before:** A developer asks for a generic improvement.
+**Before:** A vague request that hides the real work.
 
-> "Make this faster."
+> "Add a hand-tracked menu to the visionOS app."
 
-**After:** Skill rewrites the request as a measurable task.
+**After:** The skill rewrites the request as a measurable, discipline-correct task.
 
-> "Profile the route, identify the top three contributors to LCP, propose changes, measure again,
-> hold a budget of LCP ≤ 2.5s on 3G mid-tier hardware."
+> "Anchor the menu to a comfort-zone position 0.6m in front of the user, design the gaze + pinch interaction with a 250ms dwell, fall back to controller pinch when hand tracking is lost, hold 90Hz over a 5-minute gameplay slice on a real Vision Pro, and surface privacy disclosures for hand + room data on first launch."
 
 ## Skill chaining
 
@@ -35,4 +36,7 @@ This skill works well chained with:
 - `discipline-router` agent — when the request crosses disciplines.
 - `build-validator` agent — before claiming verification.
 - `code-reviewer` agent — before merging changes.
-- The other 16 skills in this plugin when scope expands.
+- `ship-auditor` agent — before declaring the ship complete.
+- `game-development` skill — for adjacent work that's better handled there.
+- `mobile-development` skill — for adjacent work that's better handled there.
+- `frontend-development` skill — for adjacent work that's better handled there.

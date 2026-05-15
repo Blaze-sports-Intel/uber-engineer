@@ -2,7 +2,7 @@
   "$schema": "https://code.claude.com/schemas/plugin-v1.json",
   "name": "uber-engineer",
   "version": "1.0.0",
-  "description": "Production-grade engineering plugin for Claude Code, Cowork, and Codex. 17 discipline skills (frontend, backend, full-stack, mobile, game, devops, API, db, embedded, cloud, AI/ML, blockchain, QA, security, AR/VR, data science, web), 4 agents, 8 hooks, 17 slash commands, and MCP wiring for Supabase, GitHub, Cloudflare, Stripe, PostHog, Context7, Playwright, and Chrome DevTools.",
+  "description": "Production-grade cross-platform engineering plugin for Claude Code, Cowork, and Codex. 17 discipline skills (frontend, backend, full-stack, mobile, game, devops, API, database, embedded, cloud, AI/ML, blockchain, QA, security, AR/VR, data science, web). 4 cross-cutting agents (discipline-router, build-validator, code-reviewer, ship-auditor). 18 slash commands (one per discipline plus a /uber router). 21 lifecycle hooks (PostToolUse skill validators, PreToolUse destructive-action guards, Stop ship-auditor reminder). MCP wiring for 9 platforms: Supabase, GitHub, Cloudflare, Stripe, PostHog, Context7, Playwright, Chrome DevTools, Firecrawl.",
   "author": {
     "name": "Austin Humphrey",
     "email": "humphrey.austin20@gmail.com",

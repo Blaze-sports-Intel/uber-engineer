@@ -1,32 +1,33 @@
 # Embedded Systems Development — Examples
 
-Concrete invocations and before/after patterns.
+Concrete invocations and a before/after pattern.
 
 ## Slash command invocations
 
 ```
-/uber:embedded memory-map firmware.elf
+/embedded memory-map firmware.elf
 ```
 
 ```
-/uber:embedded isr-budget --target=20us
+/embedded isr-budget --target=20us
 ```
 
 ```
-/uber:embedded ota-plan --hw=esp32s3
+/embedded ota-plan --hw=esp32s3
 ```
 
+The `/uber` router will dispatch to `/embedded` after reading the request. You can
+also call the discipline command directly when you already know the discipline.
 
 ## Before / after pattern
 
-**Before:** A developer asks for a generic improvement.
+**Before:** A vague request that hides the real work.
 
-> "Make this faster."
+> "Wake the device on an external pin and read a sensor."
 
-**After:** Skill rewrites the request as a measurable task.
+**After:** The skill rewrites the request as a measurable, discipline-correct task.
 
-> "Profile the route, identify the top three contributors to LCP, propose changes, measure again,
-> hold a budget of LCP ≤ 2.5s on 3G mid-tier hardware."
+> "Configure the GPIO as a wake source, drop into deep sleep with the RTC kept alive, wake → enable peripheral clock → DMA the sensor read → log to flash → re-sleep — all within the 50µs ISR budget and 30µA average current draw measured on the actual board."
 
 ## Skill chaining
 
@@ -35,4 +36,6 @@ This skill works well chained with:
 - `discipline-router` agent — when the request crosses disciplines.
 - `build-validator` agent — before claiming verification.
 - `code-reviewer` agent — before merging changes.
-- The other 16 skills in this plugin when scope expands.
+- `ship-auditor` agent — before declaring the ship complete.
+- `security-development` skill — for adjacent work that's better handled there.
+- `test-and-quality-assurance` skill — for adjacent work that's better handled there.

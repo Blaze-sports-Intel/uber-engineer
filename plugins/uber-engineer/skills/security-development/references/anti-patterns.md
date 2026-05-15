@@ -4,23 +4,23 @@ Push back when you see these. Each one ships with a concrete fix path.
 
 ### Rolling your own crypto.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Replace with a vetted library: libsodium / NaCl for symmetric, age for file encryption, JOSE libraries for tokens, the platform's HSM/KMS for keys. Document why the library was chosen and link to its security audit.
 
 ### Authn/authz in the UI but not the API.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Move every authorization check to the server-side handler. UI hides routes for UX, server enforces. Add contract tests that hit the endpoint without a valid token + with a token that lacks the scope, and assert 401/403.
 
 ### Long-lived static credentials.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Replace with short-lived tokens issued via OAuth client-credentials, AWS STS, GCP Workload Identity, or equivalent. Set a TTL ≤ 1 hour. Rotate the issuing key on a schedule.
 
 ### Logging request/response bodies indiscriminately.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Add a redaction layer that strips known sensitive fields (card, PII, secrets) by name before write. Log shape + sizes, not values. For debugging, sample 1% of requests with explicit consent + retention.
 
 ### Treating dependency updates as someone else's problem.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Wire Dependabot / Renovate / Snyk to open PRs on every CVE that affects you. Set a one-week SLA on highs and four-week SLA on mediums. Add a quarterly dependency-health review.
 
 
 ## How to push back

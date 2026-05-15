@@ -7,7 +7,7 @@ description: "Reproducible analysis, dataset hygiene, statistical rigor, dashboa
 
 Reproducible analysis, dataset hygiene, statistical rigor, dashboarding, and shipping insights.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
@@ -70,9 +70,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:data analysis-plan --question='did onboarding v2 lift d7?'`
-- `/uber:data dashboard-audit --area=revenue`
-- `/uber:data ab-test power-analysis`
+- `/data analysis-plan --question='did onboarding v2 lift d7?'`
+- `/data dashboard-audit --area=revenue`
+- `/data ab-test power-analysis`
 
 ## References (load on demand)
 
@@ -88,6 +88,13 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Notebook re-runs end-to-end on a different machine.
+- Statistical assumptions documented and checked.
+- Dashboard owner + refresh wired into platform.
+- Findings reviewed by a second analyst before publishing.
+- Decision memo names the action and the confidence level.
+
+Verification actually happened — no claim of "verified" without evidence.

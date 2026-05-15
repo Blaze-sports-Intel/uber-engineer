@@ -1,19 +1,21 @@
 ---
 name: frontend-development
-description: "UI implementation, design systems, accessibility, responsive layout, and frontend performance. Use when the user mentions: frontend, UI, user interface, React, Next.js, Vue, Svelte, Angular, component, design system, accessibility, WCAG, ARIA, responsive, Core Web Vitals, LCP, INP, CLS, Storybook, Tailwind, shadcn/ui, hydration, bundle size. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: backend API design without a UI surface; pure database schema work; infrastructure or deploy automation; iOS/Android native UI (use mobile-development)."
+description: "Component-level UI: design systems, accessibility, responsive layout, component-tier performance, state architecture inside the component tree. Use when the user mentions: frontend, UI, user interface, component, React, Vue, Svelte, Angular, design system, accessibility, WCAG, ARIA, responsive, Core Web Vitals at the component level, LCP, INP, CLS, Storybook, Tailwind, shadcn/ui, hydration, bundle size, props, hooks, signals, computed, derived state. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: page-level / route-level / SEO / rendering-mode / deploy work in Next.js, Remix, SvelteKit, Astro, or Nuxt — those are web-development territory; backend API design without a UI surface; pure database schema work; infrastructure or deploy automation; iOS/Android native UI (use mobile-development)."
 ---
 
 # Frontend Development
 
 UI implementation, design systems, accessibility, responsive layout, and frontend performance.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
 ## When to use this skill
 
-Trigger words: frontend, UI, user interface, React, Next.js, Vue, Svelte, Angular, component, design system, accessibility, WCAG, ARIA, responsive, Core Web Vitals, LCP, INP, CLS, Storybook, Tailwind, shadcn/ui, hydration, bundle size.
+Trigger words: frontend, UI, user interface, component, React, Vue, Svelte, Angular, design system, accessibility, WCAG, ARIA, responsive, Core Web Vitals at the component level, LCP, INP, CLS, Storybook, Tailwind, shadcn/ui, hydration, bundle size.
+
+Note on meta-framework names (Next.js, Remix, SvelteKit, Astro, Nuxt): these route to **web-development** because they own routing, rendering modes, SEO, and deploy. Component-tier work *inside* those frameworks still routes here.
 
 Use when the user wants any of:
 
@@ -26,6 +28,7 @@ Use when the user wants any of:
 
 ## When NOT to use this skill
 
+- page-level / route-level / SEO / rendering-mode / deploy work in Next.js, Remix, SvelteKit, Astro, or Nuxt (use web-development — that skill owns the meta-framework layer)
 - backend API design without a UI surface
 - pure database schema work
 - infrastructure or deploy automation
@@ -75,9 +78,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:frontend audit-a11y src/components/Checkout`
-- `/uber:frontend perf-budget --route=/products --target=lcp:2500ms`
-- `/uber:frontend storybook-gen src/components/Button.tsx`
+- `/frontend audit-a11y src/components/Checkout`
+- `/frontend perf-budget --route=/products --target=lcp:2500ms`
+- `/frontend storybook-gen src/components/Button.tsx`
 
 ## References (load on demand)
 
@@ -93,6 +96,12 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Loading state renders without layout shift.
+- Empty state explains why there's no data, not just a blank screen.
+- Error state shows what failed and whether it's transient.
+- Populated state matches the design and meets the perf budget.
+
+Verification actually happened — no claim of "verified" without evidence.

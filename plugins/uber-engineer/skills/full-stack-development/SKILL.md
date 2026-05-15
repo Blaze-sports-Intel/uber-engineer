@@ -7,7 +7,7 @@ description: "End-to-end feature delivery across frontend, backend, API, databas
 
 End-to-end feature delivery across frontend, backend, API, database, and deploy.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
@@ -70,9 +70,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:fullstack ship-feature 'add saved search to product index'`
-- `/uber:fullstack vertical-slice src/features/checkout`
-- `/uber:fullstack flag-rollout new-onboarding --percent=10`
+- `/fullstack ship-feature 'add saved search to product index'`
+- `/fullstack vertical-slice src/features/checkout`
+- `/fullstack flag-rollout new-onboarding --percent=10`
 
 ## References (load on demand)
 
@@ -88,6 +88,13 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Schema, API, UI, and tests ship in one PR — no half-merged feature.
+- Loading + empty + error + populated all render in the UI.
+- Server enforces every auth check the UI implies.
+- Feature flag toggles the whole slice on/off without a redeploy.
+- Rollback works without reverting code.
+
+Verification actually happened — no claim of "verified" without evidence.

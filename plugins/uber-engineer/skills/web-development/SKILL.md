@@ -1,19 +1,21 @@
 ---
 name: web-development
-description: "End-to-end web app delivery: routing, rendering modes, SEO, perf, deploy, and observability. Use when the user mentions: web app, website, SSR, SSG, ISR, RSC, SPA, Next.js, Remix, Astro, SvelteKit, Nuxt, SEO, structured data, sitemap, robots.txt, OpenGraph, Lighthouse, Vercel, Cloudflare Pages. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: isolated frontend component work (use frontend-development); isolated backend service work (use backend-development)."
+description: "Meta-framework layer: routing, rendering modes (SSR/SSG/ISR/RSC), SEO, structured data, page-level perf budgets, deploy, observability, and edge config. Use when the user mentions: web app, website, page, route, SSR, SSG, ISR, RSC, SPA, Next.js, Remix, Astro, SvelteKit, Nuxt, app router, pages router, middleware, generateMetadata, generateStaticParams, SEO, structured data, sitemap, robots.txt, OpenGraph, Twitter Cards, JSON-LD, Lighthouse on the page, Vercel, Cloudflare Pages, Netlify, deploy preview. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: component-tier work inside the framework (use frontend-development — that skill owns the component layer; this skill owns the page/route/deploy layer); isolated backend service work (use backend-development); public API contract design (use api-development)."
 ---
 
 # Web Development
 
 End-to-end web app delivery: routing, rendering modes, SEO, perf, deploy, and observability.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
 ## When to use this skill
 
-Trigger words: web app, website, SSR, SSG, ISR, RSC, SPA, Next.js, Remix, Astro, SvelteKit, Nuxt, SEO, structured data, sitemap, robots.txt, OpenGraph, Lighthouse, Vercel, Cloudflare Pages.
+Trigger words: web app, website, page, route, SSR, SSG, ISR, RSC, SPA, Next.js, Remix, Astro, SvelteKit, Nuxt, app router, pages router, middleware, generateMetadata, generateStaticParams, SEO, structured data, sitemap, robots.txt, OpenGraph, Twitter Cards, JSON-LD, Lighthouse on the page, Vercel, Cloudflare Pages, Netlify, deploy preview.
+
+Note on component work: anything inside `components/` or below the page boundary routes to **frontend-development**. This skill stays at the page, route, and deploy layer.
 
 Use when the user wants any of:
 
@@ -26,8 +28,9 @@ Use when the user wants any of:
 
 ## When NOT to use this skill
 
-- isolated frontend component work (use frontend-development)
+- component-tier work inside the meta-framework (use frontend-development — this skill owns the page/route/deploy layer; that skill owns the component layer)
 - isolated backend service work (use backend-development)
+- public API contract design (use api-development)
 
 ## Workflow
 
@@ -71,9 +74,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:web route-table`
-- `/uber:web seo-audit --url=https://example.com`
-- `/uber:web vitals-budget --route=/`
+- `/web route-table`
+- `/web seo-audit --url=https://example.com`
+- `/web vitals-budget --route=/`
 
 ## References (load on demand)
 
@@ -89,6 +92,13 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Lighthouse on the top 5 routes meets budget.
+- Sitemap + robots + canonical correct on production.
+- Preview URL renders the change before merge.
+- Web-vitals dashboard wired and showing data.
+- Error reporting catches a synthetic exception.
+
+Verification actually happened — no claim of "verified" without evidence.

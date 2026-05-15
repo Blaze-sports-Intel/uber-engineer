@@ -1,32 +1,33 @@
 # Blockchain Development — Examples
 
-Concrete invocations and before/after patterns.
+Concrete invocations and a before/after pattern.
 
 ## Slash command invocations
 
 ```
-/uber:blockchain contract-review src/Vault.sol
+/blockchain contract-review src/Vault.sol
 ```
 
 ```
-/uber:blockchain fork-test --block=latest
+/blockchain fork-test --block=latest
 ```
 
 ```
-/uber:blockchain wallet-flow approve-spend
+/blockchain wallet-flow approve-spend
 ```
 
+The `/uber` router will dispatch to `/blockchain` after reading the request. You can
+also call the discipline command directly when you already know the discipline.
 
 ## Before / after pattern
 
-**Before:** A developer asks for a generic improvement.
+**Before:** A vague request that hides the real work.
 
-> "Make this faster."
+> "Add a Vault contract with deposit and withdraw."
 
-**After:** Skill rewrites the request as a measurable task.
+**After:** The skill rewrites the request as a measurable, discipline-correct task.
 
-> "Profile the route, identify the top three contributors to LCP, propose changes, measure again,
-> hold a budget of LCP ≤ 2.5s on 3G mid-tier hardware."
+> "Write the contract with CEI ordering, ReentrancyGuard, AccessControl roles for pause/upgrade, EIP-712 typed-data signatures for off-chain auth, then a Foundry suite with 95% coverage including fork tests against a pinned block, Slither + Mythril clean, simulation preview wired into the wallet UX so users see exactly what they're signing."
 
 ## Skill chaining
 
@@ -35,4 +36,7 @@ This skill works well chained with:
 - `discipline-router` agent — when the request crosses disciplines.
 - `build-validator` agent — before claiming verification.
 - `code-reviewer` agent — before merging changes.
-- The other 16 skills in this plugin when scope expands.
+- `ship-auditor` agent — before declaring the ship complete.
+- `security-development` skill — for adjacent work that's better handled there.
+- `frontend-development` skill — for adjacent work that's better handled there.
+- `test-and-quality-assurance` skill — for adjacent work that's better handled there.

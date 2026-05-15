@@ -15,14 +15,23 @@ Use this rubric on PR review or before claiming any task done.
 
 ## Definition of done
 
-- A real user sees the correct output of this work.
-- Loading, error, empty, populated states all render correctly.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below all need to
+hold:
+
+- Healthy: handler returns expected shape under target load.
+- Degraded: dependency slow — handler responds within timeout with a graceful fallback or 503.
+- Failed: dependency down — handler returns the documented error code, logs are queryable, alert fires.
+- Recovering: after dependency comes back, handler resumes without manual intervention; queue replays succeed.
+
+Plus the cross-cutting baseline:
+
 - Verification actually happened — evidence captured.
 - Rollback plan exists and someone other than the author could execute it.
 
 ## Failure modes that block "done"
 
-- Tests pass but production behavior is wrong.
-- Build is green but the visible surface is empty/broken.
+- Tests pass but the real-world behavior is wrong.
+- Build is green but the visible / measurable surface is broken.
 - The author "checked" without producing evidence.
 - A claim of verification that wasn't actually run.

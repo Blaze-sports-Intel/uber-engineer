@@ -7,7 +7,7 @@ description: "CI/CD, infrastructure as code, observability, rollback, and incide
 
 CI/CD, infrastructure as code, observability, rollback, and incident hygiene.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
@@ -73,9 +73,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:devops pipeline-review .github/workflows/deploy.yml`
-- `/uber:devops rollout-plan --strategy=canary --service=api`
-- `/uber:devops runbook --incident=db-failover`
+- `/devops pipeline-review .github/workflows/deploy.yml`
+- `/devops rollout-plan --strategy=canary --service=api`
+- `/devops runbook --incident=db-failover`
 
 ## References (load on demand)
 
@@ -91,6 +91,13 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- CI runs from a clean clone with no manual setup.
+- IaC plan reviewed and matches intent.
+- Rollout strategy rehearsed against staging including rollback.
+- Observability shows the change: trace, metric, log all align.
+- On-call runbook updated for the new failure modes.
+
+Verification actually happened — no claim of "verified" without evidence.

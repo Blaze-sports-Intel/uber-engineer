@@ -1,13 +1,13 @@
 ---
 name: backend-development
-description: "Service architecture, API contracts, auth, data persistence, and operational hygiene. Use when the user mentions: backend, API, REST, GraphQL, server, Node.js, Python, Go, Java, Spring Boot, Express, Fastify, FastAPI, Django, Rails, authentication, authorization, JWT, OAuth, rate limiting, idempotency, caching, queue, background job. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: pure frontend UI work (use frontend-development); database schema migration work (use database-development); container orchestration / deploy pipeline (use devops-and-infrastructure)."
+description: "Service implementation behind the wire contract: handlers, auth enforcement, persistence integration, idempotency, caching, queues, observability. Use when the user mentions: backend, server, service, handler, Node.js, Python, Go, Java, Spring Boot, Express, Fastify, FastAPI, Django, Rails, authentication enforcement, authorization, JWT verification, OAuth callback, session, rate limiting, idempotency, caching, queue, background job, worker. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: public API contract design / versioning / SDK generation (use api-development — this skill implements behind the contract; api-development designs the contract); pure frontend UI work (use frontend-development); database schema migration work (use database-development); container orchestration / deploy pipeline (use devops-and-infrastructure)."
 ---
 
 # Backend Development
 
 Service architecture, API contracts, auth, data persistence, and operational hygiene.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
@@ -17,7 +17,7 @@ Trigger words: backend, API, REST, GraphQL, server, Node.js, Python, Go, Java, S
 
 Use when the user wants any of:
 
-- Design service boundaries and request/response contracts that survive versioning.
+- Implement service handlers behind a wire contract (designed by api-development or owned by an external partner).
 - Implement auth flows: session, JWT, OAuth 2.1, OIDC, API keys, RBAC, ABAC.
 - Make endpoints idempotent, retry-safe, and observable from day one.
 - Apply rate limiting, request validation, and abuse mitigation at the edge.
@@ -26,6 +26,7 @@ Use when the user wants any of:
 
 ## When NOT to use this skill
 
+- public API contract design / versioning / deprecation / SDK generation (use api-development — this skill implements handlers behind the contract; api-development designs the wire)
 - pure frontend UI work (use frontend-development)
 - database schema migration work (use database-development)
 - container orchestration / deploy pipeline (use devops-and-infrastructure)
@@ -74,9 +75,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:backend design-endpoint POST /v1/orders`
-- `/uber:backend auth-flow oauth2-pkce`
-- `/uber:backend ratelimit /v1/checkout --tier=premium`
+- `/backend design-endpoint POST /v1/orders`
+- `/backend auth-flow oauth2-pkce`
+- `/backend ratelimit /v1/checkout --tier=premium`
 
 ## References (load on demand)
 
@@ -92,6 +93,12 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Healthy: handler returns expected shape under target load.
+- Degraded: dependency slow — handler responds within timeout with a graceful fallback or 503.
+- Failed: dependency down — handler returns the documented error code, logs are queryable, alert fires.
+- Recovering: after dependency comes back, handler resumes without manual intervention; queue replays succeed.
+
+Verification actually happened — no claim of "verified" without evidence.

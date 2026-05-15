@@ -7,7 +7,7 @@ description: "Engine architecture, gameplay systems, performance budgets, and as
 
 Engine architecture, gameplay systems, performance budgets, and asset pipelines.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
@@ -71,9 +71,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:game profile-frame`
-- `/uber:game asset-pipeline --type=texture`
-- `/uber:game save-migration v3 -> v4`
+- `/game profile-frame`
+- `/game asset-pipeline --type=texture`
+- `/game save-migration v3 -> v4`
 
 ## References (load on demand)
 
@@ -89,6 +89,13 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Frame budget met on min-spec hardware over a 5-minute gameplay slice.
+- Asset bundle size within target platform limits.
+- Save/load roundtrips between schema versions N-1 and N.
+- Input works on gamepad, keyboard, and touch with rebinding.
+- Build succeeds on every target platform in CI.
+
+Verification actually happened — no claim of "verified" without evidence.

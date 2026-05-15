@@ -4,23 +4,23 @@ Push back when you see these. Each one ships with a concrete fix path.
 
 ### Reading-heavy UI floating in space without anchors.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Anchor text to a stable surface (wrist, world space, controller). Cap reading content at one paragraph per panel. Use larger type than 2D defaults — 24pt minimum at 1m distance.
 
 ### Camera-coupled UI that induces sickness.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Decouple UI from head movement. Place HUD elements in world space at a comfortable distance (0.5–1m), not glued to the camera. Add a vignette during locomotion. Test with users new to VR.
 
 ### Fixed 'forward' assumed; no recenter affordance.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Add a recenter gesture (long-press menu button on Quest, double-tap crown on Vision Pro). Surface it in onboarding. Default to 'sitting' mode unless the experience requires 'standing' + room-scale.
 
 ### Hand-only input without controller fallback.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Detect hand-tracking quality. When confidence drops or the user picks up a controller, switch input modality without losing state. Test by occluding hands mid-interaction.
 
 ### Ignoring passthrough boundary in mixed reality.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Render the platform-defined boundary cue when the user approaches the play area edge. Pause gameplay or surface a warning before they hit a wall.
 
 
 ## How to push back

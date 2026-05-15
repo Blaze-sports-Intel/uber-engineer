@@ -7,7 +7,7 @@ description: "Smart contracts, wallet UX, indexers, security review, and on-chai
 
 Smart contracts, wallet UX, indexers, security review, and on-chain integration.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
@@ -71,9 +71,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:blockchain contract-review src/Vault.sol`
-- `/uber:blockchain fork-test --block=latest`
-- `/uber:blockchain wallet-flow approve-spend`
+- `/blockchain contract-review src/Vault.sol`
+- `/blockchain fork-test --block=latest`
+- `/blockchain wallet-flow approve-spend`
 
 ## References (load on demand)
 
@@ -89,6 +89,13 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Test coverage on contracts ≥ 95% lines + branches.
+- Static analysis reports zero unresolved highs.
+- Fork test matches mainnet state assumptions.
+- Wallet flow simulation shown to a non-engineer who understands what they're signing.
+- Multisig sign-off recorded before mainnet deploy.
+
+Verification actually happened — no claim of "verified" without evidence.

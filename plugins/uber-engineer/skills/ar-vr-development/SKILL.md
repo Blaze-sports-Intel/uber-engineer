@@ -7,7 +7,7 @@ description: "Spatial UX, perf budgets, motion comfort, anchors, hand/eye input,
 
 Spatial UX, perf budgets, motion comfort, anchors, hand/eye input, and platform-specific deploy.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
@@ -71,9 +71,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:xr frame-budget --hz=90`
-- `/uber:xr spatial-ux scene-anchors`
-- `/uber:xr comfort-settings`
+- `/xr frame-budget --hz=90`
+- `/xr spatial-ux scene-anchors`
+- `/xr comfort-settings`
 
 ## References (load on demand)
 
@@ -89,6 +89,13 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Tested on a physical headset, not just simulator.
+- Frame rate stays at platform target for 5+ minutes.
+- Comfort options available in settings and exposed early.
+- Privacy disclosures complete: camera, hand, eye, room data.
+- Store review checklist signed off.
+
+Verification actually happened — no claim of "verified" without evidence.

@@ -1,4 +1,4 @@
-# API Development — Workflow Playbook
+# Api Development — Workflow Playbook
 
 This is the long-form companion to `SKILL.md`. Load when you need the detailed step-by-step.
 
@@ -6,8 +6,8 @@ This is the long-form companion to `SKILL.md`. Load when you need the detailed s
 
 Ask once, then commit. Do not pile up clarifying questions.
 
-1. What's the surface? (route, file, service, model, etc.)
-2. What's the user-visible outcome? Loading + empty + error + populated all need to work.
+1. What's the surface? (route, file, service, model, contract, schema, scene, etc.)
+2. What does "done" look like for this discipline? (See the definition-of-done states in `quality-rubric.md`.)
 3. What does the existing code look like? Read before you propose.
 4. Is there a deadline or constraint that changes the strategy?
 
@@ -35,24 +35,25 @@ Write a 5-10 line plan before touching files. Include:
 
 Match the capability to the artifact:
 
-- **Design URI paths, verbs, and resources that follow REST or GraphQL conventions** → OpenAPI 3.1 spec or GraphQL SDL covering 100% of the surface.
-- **Author OpenAPI 3** → Error catalog: code, machine-readable type, human message, HTTP status.
-- **Apply versioning strategy (URI path, header, GraphQL field deprecation) consistently** → Versioning + deprecation policy doc.
-- **Design cursor-based pagination, filter, sort, and partial response** → Webhook signing + retry contract.
-- **Author webhook contracts with signatures, retries, and replay safety** → SDK generation config + smoke tests.
-- **Generate typed SDKs from the spec, not hand-rolled per client** → Postman/Bruno collection synced from spec.
+- **Design URI paths, verbs, and resources that follow REST or GraphQL conventions.** → OpenAPI 3.1 spec or GraphQL SDL covering 100% of the surface.
+- **Author OpenAPI 3.1 or GraphQL SDL that doubles as the source of truth.** → Spec-as-source pipeline: types, mocks, tests, docs, SDKs all generated from the spec.
+- **Apply versioning strategy (URI path, header, GraphQL field deprecation) consistently.** → Versioning + deprecation policy doc.
+- **Design cursor-based pagination, filter, sort, and partial response.** → Error catalog: code, machine-readable type, human message, HTTP status — covering pagination edge cases.
+- **Author webhook contracts with signatures, retries, and replay safety.** → Webhook signing + retry contract.
+- **Generate typed SDKs from the spec, not hand-rolled per client.** → SDK generation config + smoke tests, plus a Postman/Bruno collection synced from the spec.
 
 ## Phase 5 — Verify
 
 Every item in `SKILL.md` § "Verification required before claiming done" must pass. Capture evidence —
-log line, screenshot, test output. Don't claim verification you didn't do.
+log line, screenshot, test output, profiler trace, scope reading, signed transaction hash, whatever
+counts as proof in this discipline. Don't claim verification you didn't do.
 
 ## Phase 6 — Hand back
 
 Tell the user:
 
 - What shipped (in user terms, not file paths).
-- What's now visible / changed for the visitor.
+- What's now true that wasn't before (visible behavior, capacity, posture).
 - What still needs attention, with severity.
 
 No "great question," no apology preambles, no transformation arcs.

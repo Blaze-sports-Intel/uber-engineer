@@ -7,7 +7,7 @@ description: "Serverless, multi-environment config, observability, and release p
 
 Serverless, multi-environment config, observability, and release promotion across major clouds.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
@@ -71,9 +71,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:cloud iam-review aws/policies/api.json`
-- `/uber:cloud env-diff staging prod`
-- `/uber:cloud coldstart-budget worker:api`
+- `/cloud iam-review aws/policies/api.json`
+- `/cloud env-diff staging prod`
+- `/cloud coldstart-budget worker:api`
 
 ## References (load on demand)
 
@@ -89,6 +89,13 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Staging matches prod config except for secrets and region.
+- IAM review passes — no wildcards, no unused permissions.
+- Cold start P99 within budget on the smallest config.
+- Budget alert wired and tested with a synthetic spike.
+- Failover rehearsed against a region-down simulation.
+
+Verification actually happened — no claim of "verified" without evidence.

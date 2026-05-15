@@ -7,7 +7,7 @@ description: "Test strategy, contract tests, E2E, visual regression, performance
 
 Test strategy, contract tests, E2E, visual regression, performance, and accessibility verification.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
@@ -71,9 +71,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:qa test-strategy --feature=checkout`
-- `/uber:qa flake-report`
-- `/uber:qa contract-test consumer=web provider=api`
+- `/qa test-strategy --feature=checkout`
+- `/qa flake-report`
+- `/qa contract-test consumer=web provider=api`
 
 ## References (load on demand)
 
@@ -89,6 +89,13 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Suite passes from a clean clone with no manual setup.
+- Mutation score above the agreed threshold on critical modules.
+- Contract tests pass against the latest provider version.
+- Flake rate below the agreed budget over the last N runs.
+- Visual regression diffs reviewed, not auto-accepted.
+
+Verification actually happened — no claim of "verified" without evidence.

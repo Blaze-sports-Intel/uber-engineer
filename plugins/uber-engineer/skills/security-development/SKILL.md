@@ -7,7 +7,7 @@ description: "Threat modeling, secure-by-default code, dependency hygiene, secre
 
 Threat modeling, secure-by-default code, dependency hygiene, secrets management, and incident response.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
@@ -71,9 +71,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:security threat-model --surface=payments`
-- `/uber:security sast-triage`
-- `/uber:security secret-rotation --provider=stripe`
+- `/security threat-model --surface=payments`
+- `/security sast-triage`
+- `/security secret-rotation --provider=stripe`
 
 ## References (load on demand)
 
@@ -89,6 +89,13 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Threat model reviewed before launch by a second engineer.
+- SAST + SCA gates pass with no unresolved highs.
+- Pen test or red-team exercise scheduled before significant launches.
+- Tabletop incident exercise run at least once per quarter.
+- Secret rotation rehearsed end-to-end.
+
+Verification actually happened — no claim of "verified" without evidence.

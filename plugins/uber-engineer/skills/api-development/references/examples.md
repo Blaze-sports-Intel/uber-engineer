@@ -1,32 +1,33 @@
-# API Development — Examples
+# Api Development — Examples
 
-Concrete invocations and before/after patterns.
+Concrete invocations and a before/after pattern.
 
 ## Slash command invocations
 
 ```
-/uber:api design-resource users
+/api design-resource users
 ```
 
 ```
-/uber:api version-bump --from=v1 --to=v2
+/api version-bump --from=v1 --to=v2
 ```
 
 ```
-/uber:api webhook-contract subscription.created
+/api webhook-contract subscription.created
 ```
 
+The `/uber` router will dispatch to `/api` after reading the request. You can
+also call the discipline command directly when you already know the discipline.
 
 ## Before / after pattern
 
-**Before:** A developer asks for a generic improvement.
+**Before:** A vague request that hides the real work.
 
-> "Make this faster."
+> "Add a webhook for order events."
 
-**After:** Skill rewrites the request as a measurable task.
+**After:** The skill rewrites the request as a measurable, discipline-correct task.
 
-> "Profile the route, identify the top three contributors to LCP, propose changes, measure again,
-> hold a budget of LCP ≤ 2.5s on 3G mid-tier hardware."
+> "Author the webhook contract first: event types, payload schema with examples, signing scheme (HMAC-SHA256 over body + timestamp, 5-minute replay window), retry schedule with exponential backoff, dead-letter behavior at attempt 8, and a verifier code sample in three languages — then implement the sender against the contract."
 
 ## Skill chaining
 
@@ -35,4 +36,8 @@ This skill works well chained with:
 - `discipline-router` agent — when the request crosses disciplines.
 - `build-validator` agent — before claiming verification.
 - `code-reviewer` agent — before merging changes.
-- The other 16 skills in this plugin when scope expands.
+- `ship-auditor` agent — before declaring the ship complete.
+- `backend-development` skill — for adjacent work that's better handled there.
+- `security-development` skill — for adjacent work that's better handled there.
+- `full-stack-development` skill — for adjacent work that's better handled there.
+- `test-and-quality-assurance` skill — for adjacent work that's better handled there.

@@ -4,23 +4,23 @@ Push back when you see these. Each one ships with a concrete fix path.
 
 ### Storing secrets / private keys in repo.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Move keys to a hardware wallet (Ledger/Trezor) for deploys, or a secret manager (AWS KMS, Doppler) for service accounts. Never commit a `.env` with a real key. Rotate any key that has ever been in the repo, even briefly.
 
 ### Upgradeable proxies without storage layout discipline.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Use OpenZeppelin's upgrades plugin to enforce storage layout compatibility. Add `__gap` storage slots to base contracts. Run the layout check on every upgrade PR. Document each layout change in the contract spec.
 
 ### Wallet prompts that ask users to sign raw hex.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Use EIP-712 typed data so wallets show a human-readable structure. Pair with a simulation step (Tenderly, Defender, or in-app wallet preview) that shows the resulting state change before the user signs.
 
 ### Tests passing on mocks while behavior differs on a fork.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Add fork tests against a pinned mainnet block for every external integration. Use Foundry's `vm.createSelectFork`. Block deploy if fork tests are absent or stale (older than 30 days).
 
 ### Treating audit as optional for non-trivial value transfer.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Set a value threshold (e.g., $1M TVL or any new fund mechanism). Above the threshold, an external audit is mandatory before mainnet. Below, an internal review by a second engineer is mandatory. Document the policy in the repo.
 
 
 ## How to push back

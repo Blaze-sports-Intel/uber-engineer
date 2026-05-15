@@ -7,7 +7,7 @@ description: "Schema design, migration safety, indexing, query review, and read-
 
 Schema design, migration safety, indexing, query review, and read-only-by-default access.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
@@ -72,9 +72,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:db design-schema --feature=billing`
-- `/uber:db migration-review supabase/migrations/0042_orders.sql`
-- `/uber:db query-plan 'select * from orders where ...'`
+- `/db design-schema --feature=billing`
+- `/db migration-review supabase/migrations/0042_orders.sql`
+- `/db query-plan 'select * from orders where ...'`
 
 ## References (load on demand)
 
@@ -90,6 +90,13 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Migration up + down both pass on a prod-like snapshot.
+- EXPLAIN ANALYZE shows expected index usage.
+- RLS tests cover allow + deny paths.
+- Restore from latest backup completes in under target RTO.
+- Slow query log clean after the change.
+
+Verification actually happened — no claim of "verified" without evidence.

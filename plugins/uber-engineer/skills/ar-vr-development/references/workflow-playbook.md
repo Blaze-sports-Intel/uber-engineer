@@ -6,8 +6,8 @@ This is the long-form companion to `SKILL.md`. Load when you need the detailed s
 
 Ask once, then commit. Do not pile up clarifying questions.
 
-1. What's the surface? (route, file, service, model, etc.)
-2. What's the user-visible outcome? Loading + empty + error + populated all need to work.
+1. What's the surface? (route, file, service, model, contract, schema, scene, etc.)
+2. What does "done" look like for this discipline? (See the definition-of-done states in `quality-rubric.md`.)
 3. What does the existing code look like? Read before you propose.
 4. Is there a deadline or constraint that changes the strategy?
 
@@ -35,24 +35,25 @@ Write a 5-10 line plan before touching files. Include:
 
 Match the capability to the artifact:
 
-- **Apply spatial UX patterns: comfort zones, depth cues, occlusion, anchors** → Spatial UX spec: anchor strategy, occlusion, depth zones.
-- **Hit headset frame budgets (72/90/120 Hz) without dropping below threshold** → Frame budget breakdown per platform.
-- **Choose input modality: hand, controller, gaze + pinch, voice** → Input modality matrix.
-- **Manage motion comfort: vignettes, snap turn, comfortable locomotion** → Comfort settings: snap turn, vignette, sitting/standing.
-- **Handle passthrough vs full VR transitions** → Store listing assets + privacy disclosures.
-- **Ship to App Store / Horizon Store with platform-specific assets** → Accessibility plan: subtitles, color, contrast, alternate input.
+- **Apply spatial UX patterns: comfort zones, depth cues, occlusion, anchors.** → Spatial UX spec: anchor strategy, occlusion, depth zones.
+- **Hit headset frame budgets (72/90/120 Hz) without dropping below threshold.** → Frame budget breakdown per platform.
+- **Choose input modality: hand, controller, gaze + pinch, voice.** → Input modality matrix.
+- **Manage motion comfort: vignettes, snap turn, comfortable locomotion.** → Comfort settings: snap turn, vignette, sitting/standing — with defaults that ship Comfort On.
+- **Handle passthrough vs full VR transitions.** → Passthrough/VR mode transition spec including what the user sees during the cross-fade and how the boundary is restored.
+- **Ship to App Store / Horizon Store with platform-specific assets.** → Store listing assets + privacy disclosures, plus an accessibility plan: subtitles, color, contrast, alternate input.
 
 ## Phase 5 — Verify
 
 Every item in `SKILL.md` § "Verification required before claiming done" must pass. Capture evidence —
-log line, screenshot, test output. Don't claim verification you didn't do.
+log line, screenshot, test output, profiler trace, scope reading, signed transaction hash, whatever
+counts as proof in this discipline. Don't claim verification you didn't do.
 
 ## Phase 6 — Hand back
 
 Tell the user:
 
 - What shipped (in user terms, not file paths).
-- What's now visible / changed for the visitor.
+- What's now true that wasn't before (visible behavior, capacity, posture).
 - What still needs attention, with severity.
 
 No "great question," no apology preambles, no transformation arcs.

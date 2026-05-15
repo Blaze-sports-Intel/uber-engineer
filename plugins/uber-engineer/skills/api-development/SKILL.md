@@ -1,13 +1,13 @@
 ---
 name: api-development
-description: "API contracts, versioning, backward compatibility, error schemas, and developer experience. Use when the user mentions: API design, REST, GraphQL, gRPC, OpenAPI, Swagger, API versioning, deprecation, error schema, RFC 7807, problem details, webhook, pagination, rate limit, API key, OAuth scopes, SDK, API gateway. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: internal-only service-to-service calls without external contract; frontend data fetching strategy without server contract change."
+description: "Public-facing API contract design: paths, versioning, backward compatibility, error schemas, webhook signing, SDK generation, developer experience. Use when the user mentions: API design, REST design, GraphQL schema, gRPC proto, OpenAPI, Swagger, API versioning, deprecation policy, error schema, RFC 7807, problem details, webhook contract, cursor pagination, API key issuance, OAuth scopes, SDK generation, API gateway, public docs. Pair with the discipline-router agent for cross-cutting work. Do NOT trigger for: implementing the handlers behind the contract (use backend-development — this skill designs the wire; backend-development builds the service); internal-only service-to-service calls without external contract; frontend data fetching strategy without server contract change."
 ---
 
 # API Development
 
 API contracts, versioning, backward compatibility, error schemas, and developer experience.
 
-This skill is one of 17 discipline skills in the **uber-engineer** plugin. Pair with the
+This skill is part of the **uber-engineer** plugin's discipline coverage. Pair with the
 `discipline-router` agent when a request crosses disciplines, and the `build-validator` agent
 before claiming any work is done.
 
@@ -26,8 +26,9 @@ Use when the user wants any of:
 
 ## When NOT to use this skill
 
-- internal-only service-to-service calls without external contract
-- frontend data fetching strategy without server contract change
+- implementing the handlers behind the contract (use backend-development — this skill designs the wire; that skill builds the service)
+- internal-only service-to-service calls without an external contract
+- frontend data fetching strategy without a server contract change
 
 ## Workflow
 
@@ -71,9 +72,9 @@ Use when the user wants any of:
 
 ## Suggested commands
 
-- `/uber:api design-resource users`
-- `/uber:api version-bump --from=v1 --to=v2`
-- `/uber:api webhook-contract subscription.created`
+- `/api design-resource users`
+- `/api version-bump --from=v1 --to=v2`
+- `/api webhook-contract subscription.created`
 
 ## References (load on demand)
 
@@ -89,6 +90,13 @@ Use when the user wants any of:
 
 ## Definition of done
 
-A real user can see the correct output of this work. Build success, deploy success, and 200
-responses do not equal done. Every data surface explicitly handles loading, error, empty, and
-populated states. Verification actually happened — no claim of "verified" without evidence.
+A real user, operator, or downstream system experiences the correct outcome of this work. Build
+success and deploy success do not equal done. The discipline-specific states below must all hold:
+
+- Spec lints clean (Spectral / vacuum) with zero errors.
+- Backward-compat check against previous minor passes.
+- Webhook receiver rejects unsigned + replayed payloads.
+- Generated SDK compiles and round-trips a request.
+- Public docs site renders the spec without warnings.
+
+Verification actually happened — no claim of "verified" without evidence.

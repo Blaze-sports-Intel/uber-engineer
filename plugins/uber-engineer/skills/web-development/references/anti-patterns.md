@@ -4,23 +4,23 @@ Push back when you see these. Each one ships with a concrete fix path.
 
 ### Every page SSR'd because someone heard SSR was good.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Audit each route's actual data needs. Static pages should be SSG/ISR (cheap, fast). Personalized pages should be SSR or RSC. SPA only where the route is a stateful app shell. Document the choice per route.
 
 ### Client-side routing without a 404 page.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Add an explicit not-found route at the framework level (Next.js `not-found.tsx`, Remix `CatchBoundary`, SvelteKit `+error.svelte`). Test by hitting a deliberately broken URL — assert correct status code + helpful UI.
 
 ### Meta tags in components that don't render server-side.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Move SEO metadata to the framework's metadata API (Next.js `generateMetadata`, Remix `meta`, SvelteKit `<svelte:head>`). Confirm by curling the page and grep-ing for the title tag in the response — not the rendered DOM.
 
 ### Cache busting via query string instead of fingerprinted filenames.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Switch to content-hashed filenames at build time. Set the static asset cache to immutable, max-age=31536000. The HTML stays uncached or short-cached; it references the new fingerprinted asset on every release.
 
 ### Production deploys without preview URLs.
 
-**Fix:** Identify the specific instance, propose the minimal correction, and link to the official-doc evidence justifying the change.
+**Fix:** Wire per-PR preview URLs (Vercel preview deployments, Cloudflare Pages preview branches, Netlify deploy previews). Block merge until the preview renders the change. Document the preview URL in the PR description.
 
 
 ## How to push back

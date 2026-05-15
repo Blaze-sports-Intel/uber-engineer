@@ -11,9 +11,10 @@ All notable changes to uber-engineer are documented here.
   ai-ml, blockchain, qa, security, xr, data, web.
 - 4 specialized agents: discipline-router, build-validator, code-reviewer, ship-auditor.
 - 18 slash commands: `/uber` (router) + one per discipline.
-- 8 lifecycle hooks: skill validation (PostToolUse), destructive action guards (PreToolUse),
-  ship-auditor reminder (Stop).
-- MCP wiring for Supabase, GitHub, Cloudflare, Stripe, PostHog, Context7, Playwright,
+- 21 lifecycle hook entries across 3 events: 18 PostToolUse skill validators (one per skill +
+  cross-cutting) + 2 PreToolUse destructive-action guards (rm -rf, DROP TABLE / git push --force) +
+  1 Stop ship-auditor reminder.
+- MCP wiring for 9 platforms: Supabase, GitHub, Cloudflare, Stripe, PostHog, Context7, Playwright,
   Chrome DevTools, Firecrawl.
 - Codex mirror with `.codex-plugin/` and `AGENTS.md`.
 - Marketplace `marketplace.json` for GitHub-based distribution.

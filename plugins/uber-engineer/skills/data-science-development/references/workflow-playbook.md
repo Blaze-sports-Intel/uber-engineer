@@ -6,8 +6,8 @@ This is the long-form companion to `SKILL.md`. Load when you need the detailed s
 
 Ask once, then commit. Do not pile up clarifying questions.
 
-1. What's the surface? (route, file, service, model, etc.)
-2. What's the user-visible outcome? Loading + empty + error + populated all need to work.
+1. What's the surface? (route, file, service, model, contract, schema, scene, etc.)
+2. What does "done" look like for this discipline? (See the definition-of-done states in `quality-rubric.md`.)
 3. What does the existing code look like? Read before you propose.
 4. Is there a deadline or constraint that changes the strategy?
 
@@ -35,24 +35,25 @@ Write a 5-10 line plan before touching files. Include:
 
 Match the capability to the artifact:
 
-- **Frame the question before pulling data — avoid garden-pathing** → Analysis plan: question, data, method, stop criteria.
-- **Reproduce analyses from raw inputs with pinned environment** → Notebook + Python/SQL with seed + env pin.
-- **Apply correct statistics: power, effect size, multiple comparisons** → Statistical methodology note.
-- **Build dashboards with explicit owners and refresh cadence** → Dashboard with owner, refresh, and SLO.
-- **Translate findings into recommendations with confidence ranges, not point estimates** → Decision memo: finding, confidence, recommended action.
-- **Use dbt or equivalent to keep transforms versioned and testable** → Data dictionary for the columns touched.
+- **Frame the question before pulling data — avoid garden-pathing.** → Analysis plan: question, data, method, stop criteria.
+- **Reproduce analyses from raw inputs with pinned environment.** → Notebook + Python/SQL with seed + env pin.
+- **Apply correct statistics: power, effect size, multiple comparisons.** → Statistical methodology note covering test choice, assumptions, and corrections.
+- **Build dashboards with explicit owners and refresh cadence.** → Dashboard with owner, refresh cadence, and SLO.
+- **Translate findings into recommendations with confidence ranges, not point estimates.** → Decision memo: finding, confidence, recommended action.
+- **Use dbt or equivalent to keep transforms versioned and testable.** → dbt project structure with sources, models, tests, and a generated data dictionary for the touched columns.
 
 ## Phase 5 — Verify
 
 Every item in `SKILL.md` § "Verification required before claiming done" must pass. Capture evidence —
-log line, screenshot, test output. Don't claim verification you didn't do.
+log line, screenshot, test output, profiler trace, scope reading, signed transaction hash, whatever
+counts as proof in this discipline. Don't claim verification you didn't do.
 
 ## Phase 6 — Hand back
 
 Tell the user:
 
 - What shipped (in user terms, not file paths).
-- What's now visible / changed for the visitor.
+- What's now true that wasn't before (visible behavior, capacity, posture).
 - What still needs attention, with severity.
 
 No "great question," no apology preambles, no transformation arcs.

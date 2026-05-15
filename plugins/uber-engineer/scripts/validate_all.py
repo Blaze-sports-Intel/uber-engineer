@@ -1,54 +1,49 @@
 #!/usr/bin/env python3
-"""Run every per-skill validate_skill.py and report.
+"""Validate every discipline skill in this plugin.
+
+Discovers skills by walking `skills/` instead of carrying a hardcoded list, so
+adding or removing a discipline doesn't require touching this file. Calls into
+the shared validator at `scripts/validate_skill.py` for each discovered skill.
 
 Used by CI and the local pre-commit hook.
 """
-import subprocess
+from __future__ import annotations
+
 import sys
 from pathlib import Path
 
 PLUGIN_DIR = Path(__file__).resolve().parent.parent
 SKILLS_DIR = PLUGIN_DIR / "skills"
 
-DISCIPLINES = [
-    'frontend-development',
-    'backend-development',
-    'full-stack-development',
-    'mobile-development',
-    'game-development',
-    'devops-and-infrastructure',
-    'api-development',
-    'database-development',
-    'embedded-systems-development',
-    'cloud-development',
-    'ai-ml-development',
-    'blockchain-development',
-    'test-and-quality-assurance',
-    'security-development',
-    'ar-vr-development',
-    'data-science-development',
-    'web-development',
-]
+sys.path.insert(0, str(PLUGIN_DIR / "scripts"))
+import validate_skill  # noqa: E402
+
+
+def discover_skills() -> list[Path]:
+    if not SKILLS_DIR.exists():
+        return []
+    return sorted(d for d in SKILLS_DIR.iterdir() if d.is_dir() and (d / "SKILL.md").exists())
 
 
 def main() -> int:
-    failed = []
-    for slug in DISCIPLINES:
-        script = SKILLS_DIR / slug / "scripts" / "validate_skill.py"
-        if not script.exists():
-            failed.append(f"{slug}: missing validate_skill.py")
-            continue
-        rc = subprocess.run([sys.executable, str(script)]).returncode
-        if rc != 0:
-            failed.append(f"{slug}: validate_skill.py rc={rc}")
-
-    if failed:
-        print("FAIL:")
-        for f in failed:
-            print(f"  - {f}")
+    skills = discover_skills()
+    if not skills:
+        print(f"ERROR: no skills found under {SKILLS_DIR}", file=sys.stderr)
         return 1
 
-    print(f"OK: all {len(DISCIPLINES)} skill scaffolds valid")
+    failed = []
+    for skill_dir in skills:
+        rc = validate_skill.validate(skill_dir)
+        if rc != 0:
+            failed.append(skill_dir.name)
+
+    if failed:
+        print("\nFAIL:")
+        for slug in failed:
+            print(f"  - {slug}")
+        return 1
+
+    print(f"\nOK: all {len(skills)} skill scaffolds valid")
     return 0
 
 

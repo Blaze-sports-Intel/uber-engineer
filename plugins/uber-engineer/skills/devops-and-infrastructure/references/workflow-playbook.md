@@ -1,4 +1,4 @@
-# DevOps & Infrastructure — Workflow Playbook
+# Devops And Infrastructure — Workflow Playbook
 
 This is the long-form companion to `SKILL.md`. Load when you need the detailed step-by-step.
 
@@ -6,8 +6,8 @@ This is the long-form companion to `SKILL.md`. Load when you need the detailed s
 
 Ask once, then commit. Do not pile up clarifying questions.
 
-1. What's the surface? (route, file, service, model, etc.)
-2. What's the user-visible outcome? Loading + empty + error + populated all need to work.
+1. What's the surface? (route, file, service, model, contract, schema, scene, etc.)
+2. What does "done" look like for this discipline? (See the definition-of-done states in `quality-rubric.md`.)
 3. What does the existing code look like? Read before you propose.
 4. Is there a deadline or constraint that changes the strategy?
 
@@ -35,24 +35,25 @@ Write a 5-10 line plan before touching files. Include:
 
 Match the capability to the artifact:
 
-- **Design CI pipelines that fail fast and cheap** → CI pipeline YAML with explicit gates and timing.
-- **Write IaC that is idempotent, reviewable, and reversible** → Terraform/Pulumi module with inputs, outputs, and example usage.
-- **Pick a rollout strategy: rolling, blue/green, canary — with measurable health gates** → Deployment plan including health checks and rollback trigger.
-- **Wire OpenTelemetry traces + Prometheus metrics + structured logs** → Incident runbook with detection → triage → mitigation → postmortem template.
-- **Author runbooks that on-call can execute at 3am** → SLO definitions tied to user-visible behavior, not raw uptime.
-- **Use feature flags as deploy/release decoupling, not just experimentation** → Secrets management strategy with rotation cadence.
+- **Design CI pipelines that fail fast and cheap.** → CI pipeline YAML with explicit gates and timing per stage.
+- **Write IaC that is idempotent, reviewable, and reversible.** → Terraform/Pulumi module with inputs, outputs, and example usage.
+- **Pick a rollout strategy: rolling, blue/green, canary — with measurable health gates.** → Deployment plan including health checks, traffic-shift schedule, and rollback trigger.
+- **Wire OpenTelemetry traces + Prometheus metrics + structured logs.** → Observability spec: trace identifiers, metric names + labels, log fields, alert rules tied to SLOs.
+- **Author runbooks that on-call can execute at 3am.** → Incident runbook with detection → triage → mitigation → postmortem template, plus an SLO definition tied to user-visible behavior.
+- **Use feature flags as deploy/release decoupling, not just experimentation.** → Secrets management strategy with rotation cadence, plus a feature-flag policy doc covering naming, ownership, and cleanup.
 
 ## Phase 5 — Verify
 
 Every item in `SKILL.md` § "Verification required before claiming done" must pass. Capture evidence —
-log line, screenshot, test output. Don't claim verification you didn't do.
+log line, screenshot, test output, profiler trace, scope reading, signed transaction hash, whatever
+counts as proof in this discipline. Don't claim verification you didn't do.
 
 ## Phase 6 — Hand back
 
 Tell the user:
 
 - What shipped (in user terms, not file paths).
-- What's now visible / changed for the visitor.
+- What's now true that wasn't before (visible behavior, capacity, posture).
 - What still needs attention, with severity.
 
 No "great question," no apology preambles, no transformation arcs.
